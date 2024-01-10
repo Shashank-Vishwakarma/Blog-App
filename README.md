@@ -1,5 +1,5 @@
 # Blog App using ReactJs
-
+- Tech: HTML, CSS, Tailwind CSS, JavaScript, ReactJs
 - Concepts:
 1. CRUD Operations in appwrite database
 2. File management with appwrite backend service
