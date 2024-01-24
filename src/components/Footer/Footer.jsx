@@ -1,10 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
     return (
-        <div className="bg-white border-gray-200 dark:bg-gray-900 absolute bottom-0 w-full h-12 sticky">
-            Footer
-        </div>
+        <footer className="bg-white w-full dark:bg-gray-800 absolute bottom-0">
+            <div className="w-full  p-4">
+                <span className="text-sm text-white align-middle">
+                    © 2024 <Link to="/home" className="hover:underline">My Blog</Link>. 
+                    All Rights Reserved.
+                </span>
+            </div>
+        </footer>
     );
 }
 
