@@ -4,13 +4,13 @@ class AuthService {
     constructor() {
         // create appwrite client
         this.client = new Client()
-            .setEndpoint(process.env.APPWRITE_API_ENDPOINT)
-            .setProject(process.env.APPWRITE_PROJECT_ID);
+            .setEndpoint(import.meta.env.VITE_APPWRITE_API_ENDPOINT)
+            .setProject(import.meta.env.VITE_APPWRITE_PROJECT_ID);
         // create appwrite account with above client
         this.account = new Account(this.client);
     }
 
-    async createUser({email, password}) {
+    async createUser(email, password) {
         try {
             return await this.account.create(
                 ID.unique(), 
@@ -22,7 +22,7 @@ class AuthService {
         }
     }
 
-    async signIn({email, password}) {
+    async signIn(email, password) {
         try {
             return await this.account.createEmailSession(
                 email,
@@ -35,5 +35,4 @@ class AuthService {
 }
 
 const authService = new AuthService();
-
 export default authService;
